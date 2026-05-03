@@ -1,0 +1,48 @@
+﻿@model List<WebApplication11.Models.Ticket>
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<h1 style="text-align:center">Hava Limanı İdarəetmə Sistemi</h1>
+
+<div class="container">
+
+    <!-- SOL PANEL -->
+    <div class="card">
+        <div class="title">Bilet Paneli</div>
+
+        <form method="post" asp-action="AddTicket">
+            <input name="flight" placeholder="Bakı-İstanbul" />
+            <input name="time" placeholder="16:00" />
+            <button>Sistemə Əlavə Et</button>
+        </form>
+
+        <h4>Aktiv biletlər:</h4>
+
+        @foreach (var t in Model ?? new List<WebApplication11.Models.Ticket>())
+        {
+            <p>✔ @t.Code | @t.Flight | @t.Time</p>
+        }
+    </div>
+
+    <!-- SAĞ PANEL -->
+    <div class="card">
+        <div class="title">Keçid Nöqtəsi</div>
+
+        <div class="gate @(ViewBag.Status == "ACIQ" ? "open" : "closed")">
+            @ViewBag.Status
+        </div>
+
+        <form method="post" asp-action="Scan">
+            <input name="code" placeholder="Kodu daxil edin" />
+            <button>Skan Et</button>
+        </form>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="message @(ViewBag.Status == "ACIQ" ? "success" : "error")">
+                @ViewBag.Message
+            </div>
+        }
+    </div>
+
+</div>

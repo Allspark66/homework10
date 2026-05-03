@@ -1,0 +1,85 @@
+body {
+    font-family: Arial;
+    background: #eef2f7;
+}
+
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.title {
+    font-size: 22px;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background: #16307a;
+    }
+
+.gate {
+    width: 150px;
+    height: 200px;
+    border: 5px solid gray;
+    border-radius: 15px;
+    margin: 20px auto;
+    position: relative;
+    text-align: center;
+    padding-top: 80px;
+    font-weight: bold;
+}
+
+.open {
+    border-color: green;
+    color: green;
+    box-shadow: 0 0 20px green;
+}
+
+.closed {
+    border-color: red;
+    color: red;
+}
+
+.message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.success {
+    background: #d1fae5;
+    color: green;
+}
+
+.error {
+    background: #fee2e2;
+    color: red;
+}
